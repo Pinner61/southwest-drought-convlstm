@@ -1,0 +1,6 @@
+{
+  "persistence":  {"RMSE": 0.826, "MAE": 0.570, "skill_vs_persist": 0.000,  "anomaly_corr": 0.739, "onset_F1": 0.000, "onset_recall": 0.000},
+  "climatology":  {"RMSE": 1.159, "MAE": 0.930, "skill_vs_persist": -0.969, "anomaly_corr": 0.047, "onset_F1": 0.000, "onset_recall": 0.000},
+  "pixel_lstm":   {"RMSE": 0.694, "MAE": 0.513, "skill_vs_persist": 0.295,  "anomaly_corr": 0.802, "onset_F1": 0.216, "onset_recall": 0.141},
+  "convlstm":     {"RMSE": 0.715, "MAE": 0.533, "skill_vs_persist": 0.250,  "anomaly_corr": 0.783, "onset_F1": 0.231, "onset_recall": 0.159}
+}

@@ -1,0 +1,10 @@
+torch>=2.0
+numpy
+matplotlib
+pyyaml
+pillow
+# real-data pipeline only:
+xarray
+netCDF4
+dask
+climate-indices
