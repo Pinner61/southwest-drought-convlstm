@@ -3,6 +3,7 @@ numpy
 matplotlib
 pyyaml
 pillow
+streamlit
 # real-data pipeline only:
 xarray
 netCDF4

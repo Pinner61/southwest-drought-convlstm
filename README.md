@@ -186,5 +186,23 @@ results/             metrics.json from the real run
 - Abatzoglou (2013), *gridMET*, Int. J. Climatology.
 - McKee et al. (1993), SPI. NIDIS `climate_indices` package.
 
-<sub>Independent extension of drought-propagation research at Arizona State University. Computation performed on ASU Research Computing's Sol supercomputer.</sub>
+<sub>Independent extension of drought-propagation research at Arizona State University. Computation performed on ASU Research Computing's Sol supercomputer.</sub>## v1.2 Extended Experiments
 
+This repository now includes additional scripts for strengthening the scientific evaluation:
+
+- src/region_holdout.py tests spatial transfer by training on one part of the domain and evaluating on a held-out region.
+- Invalid grid cells are masked during training/evaluation so edge artifacts from the rectangular gridMET bounding box do not influence metrics.
+- src/evaluate.py writes metrics_by_channel.json with separate SPI-3, SPI-6, and SPI-12 metrics.
+- src/plot_training_curves.py creates 	raining_curves.png from saved train/validation histories.
+- pp/dashboard.py provides a Streamlit dashboard for reviewing forecast fields, metrics, lead-time curves, and region-holdout results.
+
+Recommended run order:
+
+`ash
+python src/train.py --config config.yaml
+python src/evaluate.py --config config.yaml
+python src/leadtime.py --config config.yaml --max_lead 6
+python src/visualize.py --config config.yaml
+python src/plot_training_curves.py --config config.yaml
+python src/region_holdout.py --config config.yaml
+python -m streamlit run app/dashboard.py -- --out outputs_r
